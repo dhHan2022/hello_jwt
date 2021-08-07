@@ -30,7 +30,7 @@ app.set('jwt-secret', process.env.secret)
 
 // index page, just for testing
 app.get('/', (req, res) => {
-    res.send('Hello JWT')
+    res.send('Hello World!')
 })
 
 // configure api router
