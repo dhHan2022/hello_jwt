@@ -27,3 +27,6 @@ node_modules/
 .vscode
 
 #private Key
+api/test/eum.key
+
+*.env
