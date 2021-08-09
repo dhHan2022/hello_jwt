@@ -30,14 +30,18 @@ app.set('jwt-secret', process.env.secret)
 
 // index page, just for testing
 app.get('/', (req, res) => {
-    res.send('Hello World4!')
+    res.send('Hello World5!')
 })
+
+app.get('/health-check', (req, res, next) => {
+  res.sendStatus(200);
+});
 
 // configure api router
 app.use('/api', require('./routes/api'))
 
 // open the server
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Express is running on port ${port}`)
 })
 
