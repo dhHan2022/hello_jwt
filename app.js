@@ -30,12 +30,9 @@ app.set('jwt-secret', process.env.secret)
 
 // index page, just for testing
 app.get('/', (req, res) => {
-    res.send('Hello World5!')
+    res.send('Hello World7!')
 })
 
-app.get('/health-check', (req, res, next) => {
-  res.sendStatus(200);
-});
 
 // configure api router
 app.use('/api', require('./routes/api'))
