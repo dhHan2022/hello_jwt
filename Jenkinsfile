@@ -2,6 +2,7 @@ pipeline {
     environment {
         imageName = "bsjung/hello_jwt"
         registryCredential = 'dockerhub-token'
+        kubeconfig = '/home/ubuntu/.kube/config'
         dockerImage = ''
     }
     agent any
@@ -31,6 +32,7 @@ pipeline {
             steps {
                 script {
                     echo "3. K8s Deploy..."
+                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} get pods -A"
                 }
             }
         }
