@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        imageName = "bsjung/hello_jwt"
+        imageName = "bsjung/jwt"
         registryCredential = 'dockerhub-token'
         kubeconfig = '/home/ubuntu/.kube/config'
         dockerImage = ''
@@ -32,7 +32,8 @@ pipeline {
             steps {
                 script {
                     echo "3. K8s Deploy..."
-                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} get pods -A"
+                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} delete -f ./deploy-jwt.yaml -n test-web"
+                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} apply -f ./deploy-jwt.yaml -n test-web"
                 }
             }
         }

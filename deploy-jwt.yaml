@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jwt
+  labels:
+    app: jwt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jwt
+  template:
+    metadata:
+      labels:
+        app: jwt
+    spec:
+      containers:
+      - name: jwt
+        image: registry-1.docker.io/bsjung/jwt:latest
+        resources : 
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+      imagePullSecrets:
+      - name: regcred
