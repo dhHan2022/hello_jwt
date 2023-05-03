@@ -1,7 +1,7 @@
 pipeline {
     environment {
-        imageName = "bsjung/jwt"
-        registryCredential = 'dockerhub-token'
+        imageName = "eastshine/jwt-node"
+        registryCredential = 'eastshine-token'
         kubeconfig = '/home/dhchoi/.kube/config'
         dockerImage = ''
     }
