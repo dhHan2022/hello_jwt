@@ -2,7 +2,7 @@ pipeline {
     environment {
         imageName = "bsjung/jwt"
         registryCredential = 'dockerhub-token'
-        kubeconfig = '/home/ubuntu/.kube/config'
+        kubeconfig = '/home/dhchoi/.kube/config'
         dockerImage = ''
     }
     agent any
