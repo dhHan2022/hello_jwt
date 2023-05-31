@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        imageName = "eastshine/jwt-node"
+        imageName = "duhyun/jwt-node"
         registryCredential = 'eastshine-token'
         kubeconfig = '/home/dhchoi/.kube/config'
         dockerImage = ''
