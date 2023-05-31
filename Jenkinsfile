@@ -2,7 +2,7 @@ pipeline {
     environment {
         imageName = "duhyun/jwt-node"
         registryCredential = 'eastshine-token'
-        kubeconfig = '/home/dhchoi/.kube/config'
+        kubeconfig = '/home/duhyun/.kube/config'
         dockerImage = ''
     }
     agent any
@@ -32,8 +32,8 @@ pipeline {
             steps {
                 script {
                     echo "3. K8s Deploy..."
-                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} delete -f ./deploy-jwt.yaml -n dhchoi"
-                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} apply -f ./deploy-jwt.yaml -n dhchoi"
+                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} delete -f ./deploy-jwt.yaml -n duhyun"
+                    sh "/usr/local/bin/kubectl --kubeconfig=${kubeconfig} apply -f ./deploy-jwt.yaml -n duhyun"
                 }
             }
         }
