@@ -1,3 +1,4 @@
+//
 pipeline {
     environment {
         imageName = "duhyun/jwt-node"
